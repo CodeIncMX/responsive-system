@@ -1,0 +1,29 @@
+@import './tokens';
+
+/*
+* Create the media query only if it is active
+*/
+@mixin set-mediaquery($sizeDevice) {
+
+  $isActiveBreakpoint: map-get($active__breakpoints, $sizeDevice);
+
+  @if $isActiveBreakpoint {
+    $breakpoint: map-get($breakpoints, $sizeDevice);
+    @media (min-width: $breakpoint){
+      @content;
+    }
+  }
+}
+
+@mixin set-property-in-active-breakpoints($property__name, $map) {
+
+  #{$property__name}: map-get($map, starts-in);
+
+  @each $sizeDevice, $isActive in $active__breakpoints {
+    @if $isActive {
+      @include set-mediaquery($sizeDevice){
+        #{$property__name}: map-get($map, $sizeDevice);
+      }
+    }
+  }
+}

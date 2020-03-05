@@ -1,0 +1,22 @@
+$active__breakpoints: (
+  xs: false, // Try changing to true
+  sm: false, // Try changing to true
+  md: false,// Try changing to true
+  lg: true,
+  xl: false // Try changing to true
+);
+
+@import '../scss/responsive';
+
+div {
+  &.responsive{
+    @each $device in (xs, sm, md, lg, xl) {
+      display: none;
+      @include set-mediaquery( $device ) {
+        &.#{$device} {
+          display: block;
+        }
+      }
+    }
+  }
+}
