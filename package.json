@@ -1,6 +1,6 @@
 {
   "name": "@codeinc.mx/responsive-system",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Sass library with media queries mixins",
   "main": "scss/responsive.scss",
   "directories": {

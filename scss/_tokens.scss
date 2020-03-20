@@ -8,9 +8,12 @@ $active__breakpoints: (
 
 $breakpoints: (
   starts-in: 0, // 0px to < 374px
-  xs: 374px, // 374px (before 320px) to < 576x 
+  xs: 374px, // 374px (before 320px) to < 576x
   sm: 576px, // 576px (before 480px) to < 768px
   md: 768px, // 768px to < 1024px
-  lg: 992px, // 992 (before 1024) to infinite 
-  xl: 1216px // 1216 to infinite 
+  lg: 992px, // 992 (before 1024) to infinite
+  xl: 1216px // 1216 to infinite
 ) !default;
+
+$maxWidth__breakpoint: 1170px !default;
+$sides__margin: 15px !default;

@@ -8,7 +8,11 @@ $active__breakpoints: (
 
 @import '../scss/responsive';
 
-div {
+.container {
+
+  @include center-content;
+  border: 2px solid blue;
+
   &.responsive{
     @each $device in (xs, sm, md, lg, xl) {
       display: none;

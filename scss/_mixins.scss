@@ -15,6 +15,23 @@
   }
 }
 
+/*
+* Use it for center content inside a container
+* It uses $maxWidth__breakpoint token and $sides__margin
+*/
+@mixin center-content {
+
+  margin-left: $sides__margin;
+  margin-right: $sides__margin;
+
+  @media (min-width: ($maxWidth__breakpoint + ($sides__margin * 2)) ) {
+    max-width: $maxWidth__breakpoint;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
 @mixin set-property-in-active-breakpoints($property__name, $map) {
 
   #{$property__name}: map-get($map, starts-in);
